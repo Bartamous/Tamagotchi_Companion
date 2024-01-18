@@ -1,0 +1,16 @@
+{
+  "name": "tamagotchi",
+  "productName": "Tamagotchi Companion",
+  "version": "1.0.0",
+  "description": "Tamgotchi Companion for your Computer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Bartmelious",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^28.1.4",
+    "toastify-js": "^1.12.0"
+  }
+}
