@@ -1,14 +1,12 @@
 // Declare Variables
 let hunger = 100;
 let happy = 100;
-let faceState = 0;
+let happyState = 0;
 
 console.log('hunger ' + hunger);
 console.log('happy' + happy);
 
-while (true) {
-
-    function hungerDepletion() {
+  function hungerDepletion() {
 
         var randomNumber = Math.random();
 
@@ -17,7 +15,7 @@ while (true) {
 
             //deplete hunger by 1
             hunger -= 1
-            console.log('hunger depleted');
+            console.log('hunger depleted' + hunger);
 
             // check if hunger is at 0 and set to 0
             if (hunger < 0) {
@@ -25,7 +23,7 @@ while (true) {
             }
 
         } else {
-            console.log('hunger not depleted');
+            console.log('hunger not depleted' + hunger);
         }
     }
 
@@ -38,7 +36,7 @@ while (true) {
 
             //deplete happy by 1
             happy -= 1
-            console.log('happy depleted');
+            console.log('happy depleted' + happy);
 
             // check if hunger is at 0 and set to 0
             if (happy < 0) {
@@ -46,11 +44,50 @@ while (true) {
             }
 
         } else {
-            console.log('happy not depleted');
+            console.log('happy not depleted' + happy);
         }
+}
+
+// happy face
+
+if (happy > 50) {
+
+    function happyImageShow() {
+        happyState = Math.random(0, 2)
+
+        if (happyState == 0) {
+            happyState0()
+        }
+
+        if (happyState == 1) {
+            happyState1()
+        }
+
+        if (happyState == 2) {
+            happyState2()
+        }
+
+        function happyState0() {
+            document.getElementById('happyFaceContainer0').style.display = 'block';
+            console.log('happy0');
+        }
+
+        function happyState1() {
+            document.getElementById('happyFaceContainer1').style.display = 'block';
+            console.log('happy1');
+        }
+
+        function happyState2() {
+            document.getElementById('happyFaceContainer2').style.display = 'block';
+            console.log('happy2');
+        }
+
     }
 
-    setInterval(hungerDepletion, 1000);
-    setInterval(happyDepletion, 1000);
-
+    setInterval(happyImageShow, 1000);
 }
+
+
+
+setInterval(hungerDepletion, 1000);
+setInterval(happyDepletion, 1000);
