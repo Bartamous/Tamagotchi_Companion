@@ -3,6 +3,12 @@ let hunger = 100;
 let happy = 100;
 let happyState = 0;
 
+//console table
+let tableConsoleData = [
+    { Variable: "Hunger", Value: hunger },
+    { Variable: "Happy", Value: happy}
+];
+
 console.log('hunger ' + hunger);
 console.log('happy' + happy);
 
@@ -53,7 +59,7 @@ console.log('happy' + happy);
 if (happy > 50) {
 
     function happyImageShow() {
-        happyState = Math.random(0, 2)
+        happyState = Math.random(0, 3)
 
         if (happyState == 0) {
             happyState0()
@@ -65,6 +71,10 @@ if (happy > 50) {
 
         if (happyState == 2) {
             happyState2()
+        }
+
+        if (happyState == 3) {
+            happyState3()
         }
 
         function happyState0() {
@@ -82,12 +92,17 @@ if (happy > 50) {
             console.log('happy2');
         }
 
+        function happyState3() {
+            document.getElementById('happyFaceContainer3').style.display = 'block';
+            console.log('happy3');
+        }
+
     }
 
     setInterval(happyImageShow, 1000);
 }
 
 
-
+console.table(tableConsoleData);
 setInterval(hungerDepletion, 1000);
 setInterval(happyDepletion, 1000);
